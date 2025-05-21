@@ -1,0 +1,24 @@
+{% extends './base.html'%}
+{% block content %}
+    
+    <div class="Greeting pt-5">
+        <div class="container">
+          <h1>Hi! {{user.name}} </h1>
+          <p>Welcome to your Tasker</p>
+        </div>
+    </div>
+    <div class="main-nav">
+      <div class="container">
+        <h1>Weekly Task Planner</h1>
+        <p>Plan your week effeciently here </p>
+        <div class="days-grid">
+            {% for day in days %}
+                <a href="{% url 'dayView' day %}" class="day-card">
+                    {{ day }}
+                </a><br>
+            {% endfor %}
+            
+        </div>
+    </div>
+    </div>
+{% endblock %}
